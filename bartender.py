@@ -229,7 +229,7 @@ class Bartender(MenuDelegate):
         self.running = False
 
     def displayMenuItem(self, menuItem):
-        print menuItem.name
+        print(menuItem.name)
         self.led.clear_display()
         self.led.draw_text2(0,20,menuItem.name,2)
         self.led.display()
