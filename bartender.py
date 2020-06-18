@@ -88,7 +88,7 @@ class Bartender(MenuDelegate):
             self.strip.setPixelColor(i, 0)
         self.strip.show()
 
-        print "Done initializing"
+        print("Done initializing")
 
     @staticmethod
     def readPumpConfiguration():
