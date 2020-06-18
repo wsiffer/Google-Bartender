@@ -8,6 +8,8 @@ import json
 import threading
 import traceback
 
+from flask import Flask, request, Response
+
 from dotstar import Adafruit_DotStar
 from menu import MenuItem, Menu, Back, MenuContext, MenuDelegate
 from drinks import drink_list, drink_options
@@ -32,6 +34,8 @@ NEOPIXEL_CLOCK_PIN = 6
 NEOPIXEL_BRIGHTNESS = 64
 
 FLOW_RATE = 60.0/100.0
+
+app = Flask(__name__)
 
 class Bartender(MenuDelegate): 
 	def __init__(self):
@@ -347,23 +351,39 @@ class Bartender(MenuDelegate):
 				p_loc = int(p/100.0*width)
 				self.led.draw_pixel(x + p_loc, h + y)
 
-	def run(self):
-		self.startInterrupts()
-		# main loop
-		try:  
-			while True:
-				time.sleep(0.1)
-		  
-		except KeyboardInterrupt:  
-			GPIO.cleanup()       # clean up GPIO on CTRL+C exit  
-		GPIO.cleanup()           # clean up GPIO on normal exit 
-
-		traceback.print_exc()
+#	def run(self):
+#		self.startInterrupts()
+#		# main loop
+#		try:
+#			while True:
+#				time.sleep(0.1)
+#
+#		except KeyboardInterrupt:
+#			GPIO.cleanup()       # clean up GPIO on CTRL+C exit
+#		GPIO.cleanup()           # clean up GPIO on normal exit
+#
+#		traceback.print_exc()
 
 
 bartender = Bartender()
 bartender.buildMenu(drink_list, drink_options)
-bartender.run()
+
+@app.route('/webhook', methods=['POST'])
+def respond():
+    print(request.data);
+
+	while request.data != menuItem.name:
+		print(menuItem.name)
+		self.menuContext.advance()
+
+	self.makeDrink(menuItem.name, menuItem.attributes["ingredients"])
+
+    return Response(status=200)
+
+
+
+
+#bartender.run()
 
 
 
