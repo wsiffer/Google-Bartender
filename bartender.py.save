@@ -40,6 +40,8 @@ app = Flask(__name__)
 class Bartender(MenuDelegate): 
     def __init__(self):
         self.running = False
+        
+global menuItem
 
         # set the oled screen height
         self.screen_width = SCREEN_WIDTH
@@ -370,6 +372,8 @@ bartender.buildMenu(drink_list, drink_options)
 
 @app.route('/webhook', methods=['POST'])
 def respond():
+    from menu import MenuItem
+    print(menuItem.name)
     print(request.data);
 
     #while request.data != menuItem.name:
