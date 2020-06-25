@@ -8,7 +8,6 @@ import json
 import threading
 import traceback
 
-from flask import Flask, request, Response
 
 #from dotstar import Adafruit_DotStar
 from menu import MenuItem, Menu, Back, MenuContext, MenuDelegate
@@ -35,7 +34,6 @@ NEOPIXEL_BRIGHTNESS = 64
 
 FLOW_RATE = 60.0/100.0
 
-app = Flask(__name__)
 
 class Bartender(MenuDelegate): 
     def __init__(self):
@@ -367,22 +365,6 @@ class Bartender(MenuDelegate):
 
 bartender = Bartender()
 bartender.buildMenu(drink_list, drink_options)
-
-@app.route('/webhook', methods=['POST'])
-def respond():
-    print(request.data);
-
-    #while request.data != menuItem.name:
-        #print(menuItem.name)
-        #self.menuContext.advance()
-
-    #self.makeDrink(menuItem.name, menuItem.attributes["ingredients"])
-
-    return Response(status=200)
-
-
-
-
 #bartender.run()
 
 
