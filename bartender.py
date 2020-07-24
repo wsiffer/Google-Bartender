@@ -33,7 +33,7 @@ NEOPIXEL_CLOCK_PIN = 6
 NEOPIXEL_BRIGHTNESS = 64
 
 FLOW_RATE = 60.0/100.0
-menuName = 'IU-SUCKS'
+screenItem = 'IU-SUCKS'
 
 class Bartender(MenuDelegate): 
     def __init__(self):
@@ -227,8 +227,8 @@ class Bartender(MenuDelegate):
         self.running = False
 
     def displayMenuItem(self, menuItem):
-        global menuName
-        menuName = menuItem 
+        global screenItem
+        screenItem = menuItem 
         print(menuItem.name)
         self.led.clear_display()
         self.led.draw_text2(0,20,menuItem.name,2)
