@@ -33,7 +33,7 @@ NEOPIXEL_CLOCK_PIN = 6
 NEOPIXEL_BRIGHTNESS = 64
 
 FLOW_RATE = 60.0/100.0
-
+menuName = 'IU-SUCKS'
 
 class Bartender(MenuDelegate): 
     def __init__(self):
@@ -227,6 +227,8 @@ class Bartender(MenuDelegate):
         self.running = False
 
     def displayMenuItem(self, menuItem):
+        global menuName
+        menuName = menuItem 
         print(menuItem.name)
         self.led.clear_display()
         self.led.draw_text2(0,20,menuItem.name,2)
@@ -349,23 +351,23 @@ class Bartender(MenuDelegate):
                 p_loc = int(p/100.0*width)
                 self.led.draw_pixel(x + p_loc, h + y)
 
-    def run(self):
-        self.startInterrupts()
-        # main loop
-        try:
-            while True:
-                time.sleep(0.1)
-
-        except KeyboardInterrupt:
-            GPIO.cleanup()       # clean up GPIO on CTRL+C exit
-            GPIO.cleanup()           # clean up GPIO on normal exit
-
-        traceback.print_exc()
+#    def run(self):
+#        self.startInterrupts()
+#        # main loop
+#        try:
+#            while True:
+#                time.sleep(0.1)
+#
+#        except KeyboardInterrupt:
+#            GPIO.cleanup()       # clean up GPIO on CTRL+C exit
+#            GPIO.cleanup()           # clean up GPIO on normal exit
+#
+#        traceback.print_exc()
 
 
 bartender = Bartender()
 bartender.buildMenu(drink_list, drink_options)
-bartender.run()
+#bartender.run()
 
 
 

@@ -1,12 +1,13 @@
 from flask import Flask, request, Response
-from bartender import Bartender
+from bartender import Bartender, menuName
 from drinks import drink_list, drink_options
 from menu import MenuItem, Menu, Back, MenuContext, MenuDelegate
 
 
-bartender = Bartender()
-bartender.buildMenu(drink_list, drink_options)
-
+#bartender = Bartender()
+#Bartender().buildMenu(drink_list, drink_options)
+print(menuName.name)
+print(menuName.type)
 
 app = Flask(__name__)
 
