@@ -5,15 +5,22 @@ from menu import MenuItem, Menu, Back, MenuContext, MenuDelegate
 
 bartender = Bartender()
 bartender.buildMenu(drink_list, drink_options)
+bartender.menuContext.advance()
+
 
 app = Flask(__name__)
 
 @app.route('/webhook/', methods=['POST'])
 def respond():
-    requestData = str(request.data)[1:].replace("'", "")
-    print(requestData)
-    print(screenItem.name)
-    if (requestData == screenItem.name):
-        bartender.menuContext.select()
+    requestData = str(request.data)[4:].replace("'", "")
+    menuItem = str(screenItem.name)
+    print('request: ' + requestData + ":")
+    print(menuItem)
+
+#    while(requestData != menuItem):
+#        bartender.menuContext.advance()
+#        print("REQUEST: " + requestData)
+#        print("MENU: " + screenItem.name)
+
     return Response(status=200)
 

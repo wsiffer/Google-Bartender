@@ -76,11 +76,12 @@ class MenuContext(object):
 
 		raises ValueError if all options are visible==False
 		"""
+		global itemName
+
 		for i in self.currentMenu.options:
 			self.currentMenu.nextSelection()
 			selection = self.currentMenu.getSelection()
-			if (selection.visible): 
-				self.display(selection)
+			if (selection.visible):
 				return
 		raise ValueError("At least one option in a menu must be visible!")
 
