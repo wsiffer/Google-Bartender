@@ -10,7 +10,8 @@ import traceback
 
 
 #from dotstar import Adafruit_DotStar
-from menu import MenuItem, Menu, Back, MenuContext, MenuDelegate
+from menu import 
+MenuItem, Menu, Back, MenuContext, MenuDelegate
 from drinks import drink_list, drink_options
 
 GPIO.setmode(GPIO.BCM)
@@ -349,23 +350,23 @@ class Bartender(MenuDelegate):
                 p_loc = int(p/100.0*width)
                 self.led.draw_pixel(x + p_loc, h + y)
 
-    def run(self):
-        self.startInterrupts()
-        # main loop
-        try:
-            while True:
-                time.sleep(0.1)
-
-        except KeyboardInterrupt:
-            GPIO.cleanup()       # clean up GPIO on CTRL+C exit
-            GPIO.cleanup()           # clean up GPIO on normal exit
-
-        traceback.print_exc()
+#	def run(self):
+#		self.startInterrupts()
+#		# main loop
+#		try:
+#			while True:
+#				time.sleep(0.1)
+#
+#		except KeyboardInterrupt:
+#			GPIO.cleanup()       # clean up GPIO on CTRL+C exit
+#		GPIO.cleanup()           # clean up GPIO on normal exit
+#
+#		traceback.print_exc()
 
 
 bartender = Bartender()
 bartender.buildMenu(drink_list, drink_options)
-bartender.run()
+#bartender.run()
 
 
 

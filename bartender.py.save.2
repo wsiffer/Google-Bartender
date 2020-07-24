@@ -181,7 +181,8 @@ class Bartender(MenuDelegate):
         return True
 
     def menuItemClicked(self, menuItem):
-        if (menuItem.type == "drink"):
+        
+if (menuItem.type == "drink"):
             self.makeDrink(menuItem.name, menuItem.attributes["ingredients"])
             return True
         elif(menuItem.type == "pump_selection"):
@@ -349,23 +350,23 @@ class Bartender(MenuDelegate):
                 p_loc = int(p/100.0*width)
                 self.led.draw_pixel(x + p_loc, h + y)
 
-    def run(self):
-        self.startInterrupts()
-        # main loop
-        try:
-            while True:
-                time.sleep(0.1)
-
-        except KeyboardInterrupt:
-            GPIO.cleanup()       # clean up GPIO on CTRL+C exit
-            GPIO.cleanup()           # clean up GPIO on normal exit
-
-        traceback.print_exc()
+#	def run(self):
+#		self.startInterrupts()
+#		# main loop
+#		try:
+#			while True:
+#				time.sleep(0.1)
+#
+#		except KeyboardInterrupt:
+#			GPIO.cleanup()       # clean up GPIO on CTRL+C exit
+#		GPIO.cleanup()           # clean up GPIO on normal exit
+#
+#		traceback.print_exc()
 
 
 bartender = Bartender()
 bartender.buildMenu(drink_list, drink_options)
-bartender.run()
+#bartender.run()
 
 
 

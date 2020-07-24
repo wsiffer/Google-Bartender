@@ -10,7 +10,7 @@ bartender.buildMenu(drink_list, drink_options)
 
 app = Flask(__name__)
 
-print(bartender.menuItemClicked.menuItem.name)
+#print(bartender.menuItemClicked.menuItem.name)
 
 #bartender.menuContext.select()
 #bartender.menuContext.select()
