@@ -360,7 +360,7 @@ class Bartender(MenuDelegate):
 #
 #        except KeyboardInterrupt:
 #            GPIO.cleanup()       # clean up GPIO on CTRL+C exit
-#            GPIO.cleanup()           # clean up GPIO on normal exit
+#        GPIO.cleanup()           # clean up GPIO on normal exit
 #
 #        traceback.print_exc()
 

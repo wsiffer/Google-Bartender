@@ -82,6 +82,7 @@ class MenuContext(object):
 			self.currentMenu.nextSelection()
 			selection = self.currentMenu.getSelection()
 			if (selection.visible):
+				self.display(selection)
 				return
 		raise ValueError("At least one option in a menu must be visible!")
 

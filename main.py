@@ -5,7 +5,6 @@ from menu import MenuItem, Menu, Back, MenuContext, MenuDelegate
 
 bartender = Bartender()
 bartender.buildMenu(drink_list, drink_options)
-bartender.menuContext.advance()
 
 
 app = Flask(__name__)
@@ -17,10 +16,10 @@ def respond():
     print('request: ' + requestData + ":")
     print(menuItem)
 
-#    while(requestData != menuItem):
-#        bartender.menuContext.advance()
-#        print("REQUEST: " + requestData)
-#        print("MENU: " + screenItem.name)
+    while(requestData != menuItem):
+        bartender.menuContext.advance()
+        print("REQUEST: " + requestData)
+        print("MENU: " + screenItem.name)
 
     return Response(status=200)
 
