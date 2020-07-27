@@ -20,12 +20,12 @@ def respond():
             pete.menuContext.advance()
         pete.menuContext.select()
 
-        for i in range(0,2):
+        for i in range(0,1):
             while(bartender.screenItem.name != "Back"):
                 pete.menuContext.advance()
             pete.menuContext.select()
 
-    return Response(status=200)
+        return Response(status=200)
 
     i = 0
     while(requestData != bartender.screenItem.name):
