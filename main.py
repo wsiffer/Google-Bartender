@@ -1,28 +1,26 @@
 import bartender
 from flask import Flask, request, Response
-#from bartender import Bartender, screenItem
 from drinks import drink_list, drink_options
 from menu import MenuItem, Menu, Back, MenuContext, MenuDelegate
 
 pete = bartender.Bartender()
 pete.buildMenu(drink_list, drink_options)
-#print("FIRST" + bartender.screenItem.name)
-#pete.menuContext.advance()
-#print("SECOND" + bartender.screenItem.name)
 
 app = Flask(__name__)
 
 @app.route('/webhook/', methods=['POST'])
 def respond():
     requestData = str(request.data)[4:].replace("'", "")
-    menuItem = str(bartender.screenItem.name)
-    print('request: ' + requestData + ":")
-    print(menuItem)
 
+    i = 0
     while(requestData != bartender.screenItem.name):
+        if(i == 1):
+            break
+
         pete.menuContext.advance()
-        print("REQUEST: " + requestData)
-        print("MENU: " + bartender.screenItem.name)
+
+        if(bartender.screenItem.name == "Configure"):
+            i += 1
 
     if(requestData == bartender.screenItem.name):
         pete.menuContext.select()
