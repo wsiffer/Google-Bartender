@@ -90,7 +90,7 @@ class Bartender(MenuDelegate):
 
     @staticmethod
     def readPumpConfiguration():
-        return json.load(open('pump_config.json'))
+        return json.load(open('/home/pi/bartender/pump_config.json'))
 
     @staticmethod
     def writePumpConfiguration(configuration):
