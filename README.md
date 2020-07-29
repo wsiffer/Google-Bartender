@@ -1,6 +1,7 @@
 # Google Bartender
 Using the original project from [HackerShack](https://github.com/HackerShackOfficial/Smart-Bartender), this project implements a Flask server to control the bartender with Google Home Instead!(or any other IFTTT service) This bartender is built from a Raspberry Pi 3 and some common DIY electronics.
 
+There is a better way to exectue this I am sure, but this way worked for me as I was new to python and required minimal changes to the original [Smart-bartender](https://www.youtube.com/watch?v=2DopvpNF7J4) features
 ## Prerequisites for the Raspberry Pi
 Make sure you can connect a screen and keyboard to your Raspberry Pi. I like to use VNC to connect to the Pi. I created a [tutorial](https://www.youtube.com/watch?v=2iVK8dn-6x4) about how to set that up on a Mac.
 
@@ -19,42 +20,7 @@ curl -sSL https://get.docker.com | sh
 
 in the terminal. 
 
-### I2C
-Make sure i2c is also configured properly. Type
-
-```
-sudo vim /etc/modules
-```
-
-in the terminal
-
-press `i`, then make sure to paste the following two lines in the file:
-
-```
-i2c-bcm2708
-i2c-dev
-```
-
-press `esc` then `ZZ` to save and exit.
-
-## OLED Setup
-The Raspberry Pi Guy has a nice script to setup the OLED screen on your raspberry pi. Download the following repository on your Pi:
-
-https://github.com/the-raspberry-pi-guy/OLED
-
-then navigate to the folder with the terminal
-
-```
-cd ~/path/to/directory
-```
-
-and run the installation script
-
-```
-sh OLEDinstall.sh
-```
-
-There is also a [guide](https://learn.adafruit.com/adafruit-oled-displays-for-raspberry-pi/setting-up) on the Adafruit website if you get stuck.
+## Web Accounts Setup
 
 ## Running the Code
 
