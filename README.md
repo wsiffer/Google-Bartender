@@ -1,5 +1,5 @@
 # Google Bartender
-Using the original project from hackster.io, this project implements a Flask server to control the bartender with Google Home Instead!(or any other IFTTT service) This bartender is built from a Raspberry Pi 3 and some common DIY electronics.
+Using the original project from [HackerShack](https://github.com/HackerShackOfficial/Smart-Bartender), this project implements a Flask server to control the bartender with Google Home Instead!(or any other IFTTT service) This bartender is built from a Raspberry Pi 3 and some common DIY electronics.
 
 ## Prerequisites for the Raspberry Pi
 Make sure you can connect a screen and keyboard to your Raspberry Pi. I like to use VNC to connect to the Pi. I created a [tutorial](https://www.youtube.com/watch?v=2iVK8dn-6x4) about how to set that up on a Mac.
@@ -8,16 +8,16 @@ Make sure the following are installed:
 * Python 3+ (should already be installed on most Raspberry Pi)
 * [pip](https://www.raspberrypi.org/documentation/linux/software/python.md)
 * Docker - explained below
-### Enable SPI
-You'll need to enable SPI for the OLED screen to work properly. Typing the following command in the terminal will bring you to a configuration menu.
+### Enable Docker
+Docker is a server control system that allows different software components to be installed in what are called "containers". You can read more about it [here](https://docs.docker.com/get-docker/)
+
+Once this repository is cloned to a directory on your pi, download docker using the following command:
 
 ```
-raspi-config 
+curl -sSL https://get.docker.com | sh
 ```
 
-Then navigate to `Interfacing Options` and select `SPI`. Make sure it's turned on and reboot.
-
-See this [article](https://www.raspberrypi.org/documentation/hardware/raspberrypi/spi/) for more help if you need it.
+in the terminal. 
 
 ### I2C
 Make sure i2c is also configured properly. Type
