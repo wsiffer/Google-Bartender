@@ -42,6 +42,7 @@ Use the following steps to setup your relay service
 The key and secret will be used in a bit, but in the meantime navigate to `Buckets` and make sure your newly created bucket is listed
 
 ###IFTTT
+
 ######If-This-Then-That
 [IFTTT](https://ifttt.com/) is a service that helps to make custom home automation services. 
 
