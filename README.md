@@ -2,6 +2,8 @@
 Using the original project from [HackerShack](https://github.com/HackerShackOfficial/Smart-Bartender), this project implements a Flask server to control the bartender with Google Home Instead!(or any other IFTTT service) This bartender is built from a Raspberry Pi 3 and some common DIY electronics.
 
 There is a better way to exectue this I am sure, but this way worked for me as I was new to python and required minimal changes to the original [Smart-bartender](https://www.youtube.com/watch?v=2DopvpNF7J4) features
+
+Hardware setup replicates the original [hackster.io](https://www.hackster.io/hackershack/smart-bartender-5c430e) post. I have not checked to see if the OLED or LED lights work, but the pumps definately do. 
 ## Prerequisites for the Raspberry Pi
 Make sure you can connect a screen and keyboard to your Raspberry Pi. I like to use VNC to connect to the Pi. I created a [tutorial](https://www.youtube.com/watch?v=2iVK8dn-6x4) about how to set that up on a Mac.
 
