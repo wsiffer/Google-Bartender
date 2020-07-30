@@ -21,12 +21,12 @@ curl -sSL https://get.docker.com | sh
 in the terminal. 
 
 ## Web Accounts Setup
-###Google Home
+### Google Home
 Use the standard procedure found [here](https://support.google.com/googlenest/answer/7029485?co=GENIE.Platform%3DiOS&hl=en-AU&oco=0)
 
 Once your google home is setup and connected to the internet, make some test requests to make sure everything works properly. If it works then move on to setting up your relay!
-###Webhook Relay
-#####The webhook relay is only required for instances where you do not have access to port forwarding on your internet network. (school, work, strict parents, etc)
+### Webhook Relay
+##### The webhook relay is only required for instances where you do not have access to port forwarding on your internet network. (school, work, strict parents, etc)
 Login to [webhook relay](https://my.webhookrelay.com/login) with your google acct. Although that is probably not required, I find it easier to sign in with google whenever possible
 
 Use the following steps to setup your relay service 
@@ -41,9 +41,9 @@ Use the following steps to setup your relay service
 
 The key and secret will be used in a bit, but in the meantime navigate to `Buckets` and make sure your newly created bucket is listed
 
-###IFTTT
+### IFTTT
 
-######If-This-Then-That
+###### If-This-Then-That
 [IFTTT](https://ifttt.com/) is a service that helps to make custom home automation services. 
 
 Use the following steps to setup your automation for the bartender:
@@ -97,7 +97,7 @@ To make the bartender container run on startup as well, use the following comman
 ```
 docker update --restart always Bartender
 ```
-###Usefull Docker Commands
+### Usefull Docker Commands
 * Use `docker ps` to see what containers are currently running
 * Use `docker start CONTAINER-NAME` to start a container and `docker stop CONTAINER-NAME` to stop one 
 
