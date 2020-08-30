@@ -27,7 +27,7 @@
 	"pump_6": {
 		"name": "Pump 6",
 		"pin": 25,
-		"value": null
+		"value": "pineapple"
 	},
 	"pump_7": {
 		"name": "Pump 7",

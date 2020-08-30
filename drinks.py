@@ -22,7 +22,7 @@ drink_list = [
 			"coke": 100,
 			"oj": 30
 		}
-	}, {
+	},{
 		"name": "screwdriver",
 		"ingredients": {
 			"vodka": 50,
@@ -59,7 +59,7 @@ drink_list = [
 			"pineapple": 150
 		}
 	}, {
-		"name": "vodka lemondade",
+		"name": "vodka lemonade",
 		"ingredients": {
 			"vodka": 50,
 			"lemonade": 150
@@ -78,5 +78,5 @@ drink_options = [
 	{"name": "Margarita Mix", "value": "mmix"},
 	{"name": "Strawberry Pop", "value": "spop"},
 	{"name": "Pineapple Juice", "value": "pineapple"},
-	{"name": "Lemonade" , "value": "lemonade"}
+	{"name": "Lemonade", "value": "lemonade"}
 ]
