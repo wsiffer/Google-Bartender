@@ -46,6 +46,24 @@ drink_list = [
 			"tequila": 50,
 			"oj": 150
 		}
+	}, {
+		"name": "strawberry vodka",
+		"ingredients": {
+			"vodka": 50,
+			"spop": 150
+		}
+	}, {
+		"name": "rum and pineapple",
+		"ingredients": {
+			"rum": 50,
+			"pineapple": 150
+		}
+	}, {
+		"name": "vodka lemondade",
+		"ingredients": {
+			"vodka": 50,
+			"lemonade": 150
+		}
 	}
 ]
 
@@ -57,5 +75,8 @@ drink_options = [
 	{"name": "Tonic Water", "value": "tonic"},
 	{"name": "Coke", "value": "coke"},
 	{"name": "Orange Juice", "value": "oj"},
-	{"name": "Margarita Mix", "value": "mmix"}
+	{"name": "Margarita Mix", "value": "mmix"},
+	{"name": "Strawberry Pop", "value": "spop"},
+	{"name": "Pineapple Juice", "value": "pineapple"},
+	{"name": "Lemonade" , "value": "lemonade"}
 ]
