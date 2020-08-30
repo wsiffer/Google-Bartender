@@ -55,8 +55,8 @@ drink_list = [
 	}, {
 		"name": "rum and pineapple",
 		"ingredients": {
-			"rum": 50,
-			"pineapple": 150
+			"malibu": 75,
+			"pineapple": 125
 		}
 	}, {
 		"name": "vodka lemonade",
@@ -78,5 +78,6 @@ drink_options = [
 	{"name": "Margarita Mix", "value": "mmix"},
 	{"name": "Strawberry Pop", "value": "spop"},
 	{"name": "Pineapple Juice", "value": "pineapple"},
-	{"name": "Lemonade", "value": "lemonade"}
+	{"name": "Lemonade", "value": "lemonade"},
+	{"name": "Malibu", "value": "malibu"}
 ]

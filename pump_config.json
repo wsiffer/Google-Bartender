@@ -32,7 +32,7 @@
 	"pump_7": {
 		"name": "Pump 7",
 		"pin": 16,
-		"value": null
+		"value": "malibu"
 	},
 	"pump_8": {
 		"name": "Pump 8",
