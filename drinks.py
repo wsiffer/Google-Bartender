@@ -49,20 +49,31 @@ drink_list = [
 	}, {
 		"name": "strawberry vodka",
 		"ingredients": {
-			"vodka": 50,
+			"svodka": 50,
 			"spop": 150
 		}
 	}, {
 		"name": "rum and pineapple",
 		"ingredients": {
-			"malibu": 75,
-			"pineapple": 125
+			"malibu": 25,
+			"rum":25,
+			"pineapple": 150
 		}
 	}, {
 		"name": "vodka lemonade",
 		"ingredients": {
 			"vodka": 50,
 			"lemonade": 150
+		}
+	},{
+		"name": "shot of vodka",
+		"ingredients": {
+			"vodka": 50
+		}
+	},{
+		"name": "shot of rum",
+		"ingredients": {
+			"rum": 50
 		}
 	}
 ]
@@ -79,5 +90,6 @@ drink_options = [
 	{"name": "Strawberry Pop", "value": "spop"},
 	{"name": "Pineapple Juice", "value": "pineapple"},
 	{"name": "Lemonade", "value": "lemonade"},
+	{"name": "Strawberry Vodka", "value": "svodka"},
 	{"name": "Malibu", "value": "malibu"}
 ]

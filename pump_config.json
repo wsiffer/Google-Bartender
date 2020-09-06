@@ -37,6 +37,6 @@
 	"pump_8": {
 		"name": "Pump 8",
 		"pin": 12,
-		"value": null
+		"value": "svodka"
 	}
 }
