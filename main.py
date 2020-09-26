@@ -8,7 +8,7 @@ pete.buildMenu(drink_list, drink_options)
 
 app = Flask(__name__)
 
-@app.route('/webhook/', methods=['POST'])
+@app.route('/webhook', methods=['POST'])
 def respond():
     requestData = str(request.data)[4:].replace("'", "")
 
