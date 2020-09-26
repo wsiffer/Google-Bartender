@@ -76,7 +76,7 @@ Inside the directory there is a file called Dockerfile, this instructs Docker wh
 
 Use the following command to build the docker image (you may need sudo)
 ```
-docker build --tag bartender
+docker build . --tag bartender
 ```
 This will likely take a bit, so go grab yourself some coffee
 
