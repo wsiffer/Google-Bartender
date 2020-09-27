@@ -27,7 +27,7 @@ RIGHT_PIN_BOUNCE = 2000
 OLED_RESET_PIN = 15
 OLED_DC_PIN = 16
 
-num_pixels = 45
+num_pixels = 57
 ORDER = neopixel.GRB
 
 FLOW_RATE = 50.0/100.0
@@ -293,13 +293,17 @@ class Bartender(MenuDelegate):
         for i in range(num_pixels):
             pixels[i] = (0, 255, 0)
             pixels.show()
-            time.sleep(0.05)
+            time.sleep(0.03)
+        for i in range(num_pixels):
+            pixels[i] = (0, 0, 0)
+            pixels.show()
+            time.sleep(0.03)
 #        pixels.fill((0, 255, 0))
 #        pixels.show()
 #        x = 5
-        time.sleep(5)
+        #time.sleep(5)
         # turn lights gold
-        pixels.fill((255, 100, 9))
+        pixels.fill((255,100,9))
         pixels.show()
 
     def pour(self, pin, waitTime):
