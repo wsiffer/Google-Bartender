@@ -105,6 +105,11 @@ class Bartender(MenuDelegate):
         GPIO.remove_event_detect(self.btn1Pin)
         GPIO.remove_event_detect(self.btn2Pin)
 
+    def atExit(self):
+        pixels.fill((0, 0, 0))
+        pixels.show
+        GPIO.cleanup()
+
     def buildMenu(self, drink_list, drink_options):
         # create a new main menu
         m = Menu("Main Menu")
