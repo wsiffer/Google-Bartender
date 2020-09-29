@@ -296,11 +296,11 @@ class Bartender(MenuDelegate):
         pixels.show()
         # make lights green
         for i in range(num_pixels):
-            pixels[i] = (0, 255, 0)
+            pixels[i] = (0, 255, 15)
             pixels.show()
             time.sleep(0.03)
         for i in range(num_pixels):
-            pixels[i] = (0, 0, 0)
+            pixels[i] = (0, 0, 15)
             pixels.show()
             time.sleep(0.03)
 #        pixels.fill((0, 255, 0))
@@ -308,8 +308,9 @@ class Bartender(MenuDelegate):
 #        x = 5
         #time.sleep(5)
         # turn lights gold
-        pixels.fill((255,100,9))
-        pixels.show()
+        for i in range(0, 101):
+            pixels.fill((int(255 * (i/100)), int(100 * (i/100)), int(9 * (i/100))))
+            pixels.show()
 
     def pour(self, pin, waitTime):
         GPIO.output(pin, GPIO.LOW)

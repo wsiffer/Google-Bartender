@@ -1,10 +1,10 @@
 import bartender
 from flask import Flask, request, Response
 from drinks import drink_list, drink_options
-import atexit
+#import signal
 from menu import MenuItem, Menu, Back, MenuContext, MenuDelegate
 
-atexit.register(bartender.Bartender.atExit)
+#signal.signal(signal.SIGINT, bartender.Bartender.atExit)
 pete = bartender.Bartender()
 pete.buildMenu(drink_list, drink_options)
 
