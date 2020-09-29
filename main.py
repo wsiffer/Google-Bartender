@@ -1,10 +1,9 @@
 import bartender
 from flask import Flask, request, Response
 from drinks import drink_list, drink_options
-#import signal
+#import atexit
 from menu import MenuItem, Menu, Back, MenuContext, MenuDelegate
 
-#signal.signal(signal.SIGINT, bartender.Bartender.atExit)
 pete = bartender.Bartender()
 pete.buildMenu(drink_list, drink_options)
 
@@ -45,4 +44,6 @@ def respond():
     return Response(status=200)
 
 if __name__=='__main__':
+    #atexit.register(bartender.Bartender.atExit)
     app.run(host='0.0.0.0')
+

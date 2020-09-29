@@ -139,6 +139,7 @@ class Bartender(MenuDelegate):
         pixels.fill((0, 0, 0))
         pixels.show
         GPIO.cleanup()
+        exit(0)
 
     def buildMenu(self, drink_list, drink_options):
         # create a new main menu
@@ -300,7 +301,7 @@ class Bartender(MenuDelegate):
             pixels.show()
             time.sleep(0.03)
         for i in range(num_pixels):
-            pixels[i] = (0, 0, 15)
+            pixels[i] = (0, 0, 0)
             pixels.show()
             time.sleep(0.03)
 #        pixels.fill((0, 255, 0))
@@ -310,6 +311,7 @@ class Bartender(MenuDelegate):
         # turn lights gold
         for i in range(0, 101):
             pixels.fill((int(255 * (i/100)), int(100 * (i/100)), int(9 * (i/100))))
+            time.sleep(0.01)
             pixels.show()
 
     def pour(self, pin, waitTime):
