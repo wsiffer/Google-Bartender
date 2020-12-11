@@ -12,7 +12,7 @@
 	"pump_3": {
 		"name": "Pump 3",
 		"pin": 22,
-		"value": "spop"
+		"value": null
 	},
 	"pump_4": {
 		"name": "Pump 4",
@@ -27,12 +27,12 @@
 	"pump_6": {
 		"name": "Pump 6",
 		"pin": 25,
-		"value": "pineapple"
+		"value": null
 	},
 	"pump_7": {
 		"name": "Pump 7",
 		"pin": 16,
-		"value": "malibu"
+		"value": null
 	},
 	"pump_8": {
 		"name": "Pump 8",
