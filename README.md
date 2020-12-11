@@ -11,6 +11,7 @@ Make sure the following are installed:
 * Python 3+ (should already be installed on most Raspberry Pi)
 * [pip](https://www.raspberrypi.org/documentation/linux/software/python.md)
 * Docker - explained below
+* SSH connection - this is useful for updating the drinks while running the bartender "headless"
 ### Enable Docker
 Docker is a server control system that allows different software components to be installed in what are called "containers". You can read more about it [here](https://docs.docker.com/get-docker/)
 
@@ -99,7 +100,26 @@ To make the bartender container run on startup as well, use the following comman
 ```
 docker update --restart always Bartender
 ```
-### Usefull Docker Commands
+###Setting a static IP
+Setting a static IP will be helpful in making sure that the Bartender and webhook clients always communicate when the bartender is booted. 
+* Use the command `sudo nano /etc/dhcpd.conf` to open the static IP settings
+* Add the following lines to the text file:
+     * ```
+       interface wlan0
+       static ip_address=your.local.ip.address
+       static routers=your.router.ip.address
+       static domain_name_servers=your.router.ip.address
+       ```
+###Configure Bartender to Boot to Command Line
+* Use the command `sudo raspi-config` to open the configuration screen
+* Navigate to `Boot Options`
+* Select `Desktop / CLI`
+* Select `Console Autologin`
+* When you're finished, select `Finish` to reboot
+
+To switch back to booting to a desktop screen, just select `Desktop Autologin` instead of `Console Autologin`
+
+### Useful Docker Commands
 * Use `docker ps` to see what containers are currently running
 * Use `docker start CONTAINER-NAME` to start a container and `docker stop CONTAINER-NAME` to stop one 
 
