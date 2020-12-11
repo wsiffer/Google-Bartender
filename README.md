@@ -100,7 +100,7 @@ To make the bartender container run on startup as well, use the following comman
 ```
 docker update --restart always Bartender
 ```
-###Setting a static IP
+### Setting a static IP
 Setting a static IP will be helpful in making sure that the Bartender and webhook clients always communicate when the bartender is booted. 
 
 This static IP will need to be removed if the Bartender is ever connected to a new internet network.
@@ -113,7 +113,7 @@ This static IP will need to be removed if the Bartender is ever connected to a n
        static routers=your.router.ip.address
        static domain_name_servers=your.router.ip.address
        ```
-###Configure Bartender to Boot to Command Line
+### Configure Bartender to Boot to Command Line
 * Use the command `sudo raspi-config` to open the configuration screen
 * Navigate to `Boot Options`
 * Select `Desktop / CLI`
