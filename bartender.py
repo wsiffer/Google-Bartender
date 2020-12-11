@@ -139,10 +139,7 @@ class Bartender(MenuDelegate):
         pixels.fill((0, 0, 0))
         pixels.show
         GPIO.cleanup()
-<<<<<<< HEAD
-=======
         exit(0)
->>>>>>> lights
 
     def buildMenu(self, drink_list, drink_options):
         # create a new main menu
