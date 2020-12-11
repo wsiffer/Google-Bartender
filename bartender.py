@@ -7,9 +7,9 @@ import RPi.GPIO as GPIO
 import json
 import threading
 import traceback
+import board
+import neopixel
 
-
-#from dotstar import Adafruit_DotStar
 from menu import MenuItem, Menu, Back, MenuContext, MenuDelegate
 from drinks import drink_list, drink_options
 
@@ -27,13 +27,46 @@ RIGHT_PIN_BOUNCE = 2000
 OLED_RESET_PIN = 15
 OLED_DC_PIN = 16
 
-NUMBER_NEOPIXELS = 45
-NEOPIXEL_DATA_PIN = 26
-NEOPIXEL_CLOCK_PIN = 6
-NEOPIXEL_BRIGHTNESS = 64
+num_pixels = 57
+ORDER = neopixel.GRB
 
 FLOW_RATE = 50.0/100.0
 screenItem = 'IU-SUCKS'
+pixel_pin = board.D18
+
+# setup pixels:
+pixels = neopixel.NeoPixel(pixel_pin, num_pixels, brightness=0.3, auto_write=False, pixel_order=ORDER)
+
+def wheel(pos):
+    # Input a value 0 to 255 to get a color value.
+    # The colours are a transition r - g - b - back to r.
+    if pos < 0 or pos > 255:
+        r = g = b = 0
+    elif pos < 85:
+        r = int(pos * 3)
+        g = int(255 - pos * 3)
+        b = 0
+    elif pos < 170:
+        pos -= 85
+        r = int(255 - pos * 3)
+        g = 0
+        b = int(pos * 3)
+    else:
+        pos -= 170
+        r = 0
+        g = int(pos * 3)
+        b = int(255 - pos * 3)
+    return (r, g, b) #if ORDER in (neopixel.RGB, neopixel.GRB) else (r, g, b, 0)
+
+def rainbow_cycle(wait):
+    for j in range(255):
+        for i in range(num_pixels):
+            pixel_index = (i * 256 // num_pixels) + j
+            pixels[i] = wheel(pixel_index & 255)
+        pixels.show()
+        time.sleep(wait)
+
+
 
 class Bartender(MenuDelegate): 
     def __init__(self):
@@ -71,8 +104,6 @@ class Bartender(MenuDelegate):
         for pump in self.pump_configuration.keys():
             GPIO.setup(self.pump_configuration[pump]["pin"], GPIO.OUT, initial=GPIO.HIGH)
 
-        # setup pixels:
-        #self.numpixels = NUMBER_NEOPIXELS # Number of LEDs in strip
 
         # Here's how to control the strip from any two GPIO pins:
         #datapin  = NEOPIXEL_DATA_PIN
@@ -82,9 +113,8 @@ class Bartender(MenuDelegate):
         #self.strip.setBrightness(NEOPIXEL_BRIGHTNESS) # Limit brightness to ~1/4 duty cycle
 
         # turn everything off
-        #for i in range(0, self.numpixels):
-           # self.strip.setPixelColor(i, 0)
-        #self.strip.show()
+        pixels.fill((255,100,9))
+        pixels.show()
 
         print("Done initializing")
 
@@ -109,6 +139,10 @@ class Bartender(MenuDelegate):
         pixels.fill((0, 0, 0))
         pixels.show
         GPIO.cleanup()
+<<<<<<< HEAD
+=======
+        exit(0)
+>>>>>>> lights
 
     def buildMenu(self, drink_list, drink_options):
         # create a new main menu
@@ -245,33 +279,43 @@ class Bartender(MenuDelegate):
         tail  = -10             # Index of last 'off' pixel
         color = 0xFF0000        # 'On' color (starts red)
 
-        while getattr(t, "do_run", True):
-            #self.strip.setPixelColor(head, color) # Turn on 'head' pixel
-            #self.strip.setPixelColor(tail, 0)     # Turn off 'tail'
-            #self.strip.show()                     # Refresh strip
-            time.sleep(1.0 / 50)             # Pause 20 milliseconds (~50 fps)
+        while(getattr(t, "do_run", True)):
+             rainbow_cycle(0.001)
+#            pixels[head] = color # Turn on 'head' pixel
+#            pixels[tail] = (0, 0, 0)     # Turn off 'tail'
+#            pixels.show()                     # Refresh strip
+#            time.sleep(1.0 / 50)             # Pause 20 milliseconds (~50 fps)
 
-            head += 1                        # Advance head position
-            #if(head >= self.numpixels):           # Off end of strip?
-                #head    = 0              # Reset to start
-                #color >>= 8              # Red->green->blue->black
-                #(color == 0): color = 0xFF0000 # If black, reset to red
-
-            tail += 1                        # Advance tail position
-            #if(tail >= self.numpixels): tail = 0  # Off end? Reset
+#            head += 1                        # Advance head position
+#            if(head >= num_pixels):           # Off end of strip?
+#                head    = 0              # Reset to start
+#                color >>= 8              # Red->green->blue->black
+#                if(color == 0): color = 0xFF0000 # If black, reset to red
+#
+#            tail += 1                        # Advance tail position
+#            if(tail >= num_pixels): tail = 0  # Off end? Reset
 
     def lightsEndingSequence(self):
+        pixels.fill((0,0,0))
+        pixels.show()
         # make lights green
-        #for i in range(0, self.numpixels):
-            #self.strip.setPixelColor(i, 0xFF0000)
-        #self.strip.show()
-
-        time.sleep(5)
-
-        # turn lights off
-        #for i in range(0, self.numpixels):
-            #self.strip.setPixelColor(i, 0)
-        #self.strip.show()
+        for i in range(num_pixels):
+            pixels[i] = (0, 255, 15)
+            pixels.show()
+            time.sleep(0.03)
+        for i in range(num_pixels):
+            pixels[i] = (0, 0, 0)
+            pixels.show()
+            time.sleep(0.03)
+#        pixels.fill((0, 255, 0))
+#        pixels.show()
+#        x = 5
+        #time.sleep(5)
+        # turn lights gold
+        for i in range(0, 101):
+            pixels.fill((int(255 * (i/100)), int(100 * (i/100)), int(9 * (i/100))))
+            time.sleep(0.01)
+            pixels.show()
 
     def pour(self, pin, waitTime):
         GPIO.output(pin, GPIO.LOW)

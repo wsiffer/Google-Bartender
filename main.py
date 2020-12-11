@@ -2,6 +2,7 @@ import bartender
 import atexit
 from flask import Flask, request, Response
 from drinks import drink_list, drink_options
+#import atexit
 from menu import MenuItem, Menu, Back, MenuContext, MenuDelegate
 
 atexit.register(bartender.Bartender.atExit)
@@ -45,4 +46,6 @@ def respond():
     return Response(status=200)
 
 if __name__=='__main__':
+    #atexit.register(bartender.Bartender.atExit)
     app.run(host='0.0.0.0')
+
