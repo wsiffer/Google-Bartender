@@ -100,7 +100,7 @@ To make the bartender container run on startup as well, use the following comman
 ```
 docker update --restart always Bartender
 ```
-### Setting a static IP
+### Setting a Static IP
 Setting a static IP will be helpful in making sure that the Bartender and webhook clients always communicate when the bartender is booted. 
 
 This static IP will need to be removed if the Bartender is ever connected to a new internet network.
