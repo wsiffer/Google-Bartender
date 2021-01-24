@@ -2,17 +2,17 @@
 	"pump_1": {
 		"name": "Pump 1",
 		"pin": 17,
-		"value": "lemonade"
+		"value": "cbrew"
 	},
 	"pump_2": {
 		"name": "Pump 2",
 		"pin": 27,
-		"value": "malibu"
+		"value": "van"
 	},
 	"pump_3": {
 		"name": "Pump 3",
 		"pin": 22,
-		"value": "tequila"
+		"value": "cream"
 	},
 	"pump_4": {
 		"name": "Pump 4",
