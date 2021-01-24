@@ -26,7 +26,7 @@ drink_list = [
 		"name": "screwdriver",
 		"ingredients": {
 			"vodka": 50,
-			"oj": 150
+			"oj": 200
 		}
 	}, {
 		"name": "margarita",
@@ -44,13 +44,15 @@ drink_list = [
 		"name": "tequila sunrise",
 		"ingredients": {
 			"tequila": 50,
-			"oj": 150
+			"oj": 150,
+			"gren": 25,
+			"cran": 25
 		}
 	}, {
 		"name": "strawberry vodka",
 		"ingredients": {
 			"svodka": 50,
-			"spop": 150
+			"lemonade": 150
 		}
 	}, {
 		"name": "rum and pineapple",
@@ -60,10 +62,23 @@ drink_list = [
 			"pineapple": 150
 		}
 	}, {
+		"name": "rum and cranberry",
+		"ingredients": {
+			"malibu": 50,
+			"cran": 150
+		}
+	}, {
 		"name": "vodka lemonade",
 		"ingredients": {
 			"vodka": 50,
 			"lemonade": 150
+		}
+	}, {
+		"name": "vodka cherry lemonade",
+		"ingredients": {
+			"vodka": 50,
+			"lemonade": 150,
+			"gren": 20
 		}
 	},{
 		"name": "shot of vodka",
@@ -91,5 +106,7 @@ drink_options = [
 	{"name": "Pineapple Juice", "value": "pineapple"},
 	{"name": "Lemonade", "value": "lemonade"},
 	{"name": "Strawberry Vodka", "value": "svodka"},
-	{"name": "Malibu", "value": "malibu"}
+	{"name": "Malibu", "value": "malibu"},
+	{"name": "Grenadine", "value": "gren"},
+	{"name": "Cranberry", "value": "cran"}
 ]

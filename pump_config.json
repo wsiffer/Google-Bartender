@@ -2,41 +2,41 @@
 	"pump_1": {
 		"name": "Pump 1",
 		"pin": 17,
-		"value": "mmix"
+		"value": "lemonade"
 	},
 	"pump_2": {
 		"name": "Pump 2",
 		"pin": 27,
-		"value": "tequila"
+		"value": "malibu"
 	},
 	"pump_3": {
 		"name": "Pump 3",
 		"pin": 22,
-		"value": null
+		"value": "tequila"
 	},
 	"pump_4": {
 		"name": "Pump 4",
 		"pin": 23,
-		"value": null
+		"value": "vodka"
 	},
 	"pump_5": {
 		"name": "Pump 5",
 		"pin": 24,
-		"value": null
+		"value": "oj"
 	},
 	"pump_6": {
 		"name": "Pump 6",
 		"pin": 25,
-		"value": null
+		"value": "gren"
 	},
 	"pump_7": {
 		"name": "Pump 7",
 		"pin": 16,
-		"value": null
+		"value": "cran"
 	},
 	"pump_8": {
 		"name": "Pump 8",
 		"pin": 12,
-		"value": null
+		"value": "mmix"
 	}
 }
