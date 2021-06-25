@@ -121,6 +121,12 @@ drink_list = [
 		"ingredients": {
 			"cbrew": 310
 		}
+	},{
+		"name": "Jameson and ginger",
+		"ingredients": {
+			"james": 50,
+			"ginger": 150
+		}
 	}
 ]
 
@@ -128,6 +134,8 @@ drink_options = [
 	{"name": "Gin", "value": "gin"},
 	{"name": "Rum", "value": "rum"},
 	{"name": "Vodka", "value": "vodka"},
+	{"name": "Jameson", "value": "james"},
+	{"name": "Ginger", "value": "ginger"},
 	{"name": "Tequila", "value": "tequila"},
 	{"name": "Tonic Water", "value": "tonic"},
 	{"name": "Coke", "value": "coke"},
