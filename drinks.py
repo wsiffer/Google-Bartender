@@ -122,7 +122,7 @@ drink_list = [
 			"cbrew": 310
 		}
 	},{
-		"name": "Jameson and ginger",
+		"name": "Jameson and Ginger",
 		"ingredients": {
 			"james": 50,
 			"ginger": 150
