@@ -1,4 +1,5 @@
 # Google Home Enabled Smart-Bartender
+# THIS PROJECT NO LONGER WORKS - DUE TO RECENT CHANGES FROM IFTTT, GOOGLE HOME COMMANDS ARE NO LONGER POSSIBLE. I hope to fix this in the future with a local solution, but I don't have time now.
 Using the original project from [HackerShack](https://github.com/HackerShackOfficial/Smart-Bartender), this project implements a Flask server to control the bartender with Google Home Instead!(or any other IFTTT service) This bartender is built from a Raspberry Pi 3 and some common DIY electronics.
 
 There is a better way to exectue this I am sure, but this way worked for me as I was new to python and required minimal changes to the original [Smart-bartender](https://www.youtube.com/watch?v=2DopvpNF7J4) features

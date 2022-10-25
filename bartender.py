@@ -31,7 +31,7 @@ num_pixels = 57
 ORDER = neopixel.GRB
 
 FLOW_RATE = 50.0/100.0
-screenItem = 'IU-SUCKS'
+screenItem = 'BoilerUp!'
 pixel_pin = board.D18
 
 # setup pixels:
